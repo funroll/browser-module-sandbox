@@ -24,7 +24,7 @@ function Sandbox(opts) {
   this.cache = createCache(opts.cacheOpts)
 }
 
-Sandbox.prototype.bundle = function(entry, preferredVersions) {
+Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
   if (!preferredVersions) preferredVersions = {}
   var self = this
   
@@ -97,6 +97,8 @@ Sandbox.prototype.bundle = function(entry, preferredVersions) {
   
   function makeIframe(script) {
     script = script + entry
+    console.log("calling back")
+    callback(script);
     return script
     // setTimeout is because iframes report inaccurate window.innerWidth/innerHeight, even after DOMContentLoaded!
     var body = self.iframeBody +
