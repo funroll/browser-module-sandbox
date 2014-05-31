@@ -1,7 +1,7 @@
 var inherits = require('inherits')
 var iframe = require('iframe')
 var events = require('events')
-var request = require('browser-request')
+var request = require('request')
 var detective = require('detective')
 var createCache = require('browser-module-cache')
 

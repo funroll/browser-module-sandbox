@@ -10,8 +10,8 @@
     "iframe": "~0.0.2",
     "inherits": "~1.0.0",
     "detective": "~2.1.2",
-    "browser-module-cache": "~0.1.3",
-    "request": "~0.3.1"
+    "browser-module-cache": "funroll/browser-module-cache",
+    "request": "*"
   },
   "bugs": {
     "url": "https://github.com/maxogden/browser-module-sandbox/issues"
