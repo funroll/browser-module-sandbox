@@ -96,8 +96,8 @@ Sandbox.prototype.bundle = function(entry, preferredVersions) {
   }
   
   function makeIframe(script) {
-    return script
     script = script + entry
+    return script
     // setTimeout is because iframes report inaccurate window.innerWidth/innerHeight, even after DOMContentLoaded!
     var body = self.iframeBody +
         '<script type="text/javascript" src="data:text/javascript;charset=UTF-8,'
