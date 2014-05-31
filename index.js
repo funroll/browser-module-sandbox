@@ -109,6 +109,7 @@ Sandbox.prototype.bundle = function(entry, preferredVersions) {
     self.emit('bundleEnd', html)
     return html
   }
+  return "foo"
 }
 
 inherits(Sandbox, events.EventEmitter)
