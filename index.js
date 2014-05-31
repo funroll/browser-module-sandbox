@@ -103,9 +103,10 @@ Sandbox.prototype.bundle = function(entry, preferredVersions) {
       + encodeURIComponent('setTimeout(function(){' + script + '}, 0)')
       + '"></script>'
     var html = { head: self.iframeHead + self.iframeStyle, body: body, script: script }
-		console.log("html: " + html)
+    console.log("html: " + html)
     //self.iframe.setHTML(html)
     self.emit('bundleEnd', html)
+    return html
   }
 }
 
