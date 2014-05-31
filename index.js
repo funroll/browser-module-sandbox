@@ -29,7 +29,7 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
   var self = this
   
   var modules = detective(entry)
-  console.log("modules: " + JSON.stringify(modules))
+  //console.log("modules: " + JSON.stringify(modules))
   
   self.emit('bundleStart')
   
@@ -72,7 +72,7 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
     })
     
     var r = {method: "POST", body: JSON.stringify(body), url: self.cdn + '/multi'}
-    console.log("request: " + JSON.stringify(r))
+    //console.log("request: " + JSON.stringify(r))
     request(r, downloadedModules)
   })
 
@@ -100,7 +100,7 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
   
   function makeIframe(script) {
     script = script + entry
-    console.log("calling back")
+    //console.log("calling back")
     callback(script);
     return script
     // setTimeout is because iframes report inaccurate window.innerWidth/innerHeight, even after DOMContentLoaded!
@@ -109,7 +109,7 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
       + encodeURIComponent('setTimeout(function(){' + script + '}, 0)')
       + '"></script>'
     var html = { head: self.iframeHead + self.iframeStyle, body: body, script: script }
-    console.log("html: " + html)
+    //console.log("html: " + html)
     //self.iframe.setHTML(html)
     self.emit('bundleEnd', html)
     return html
