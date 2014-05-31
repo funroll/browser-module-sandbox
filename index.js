@@ -71,8 +71,8 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
       body.dependencies[module] = version
     })
     
-    console.log("request: " + r);
     var r = {method: "POST", body: JSON.stringify(body), url: self.cdn + '/multi'}
+    console.log("request: " + r);
     request(r, downloadedModules)
   })
 
