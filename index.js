@@ -72,7 +72,7 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
     })
     
     var r = {method: "POST", body: JSON.stringify(body), url: self.cdn + '/multi'}
-    console.log("request: " + r);
+    console.log("request: " + JSON.stringify(r))
     request(r, downloadedModules)
   })
 
