@@ -29,6 +29,7 @@ Sandbox.prototype.bundle = function(entry, callback, preferredVersions) {
   var self = this
   
   var modules = detective(entry)
+  console.log("modules: " + JSON.stringify(modules))
   
   self.emit('bundleStart')
   
